@@ -9,8 +9,6 @@ const scoreSchema = new Schema({
   timestamps: true
 });
 
-// Here's an example of Mongoose Middleware
-// Ensure that initials are uppercase & not longer than 3 characters
 scoreSchema.pre('save', function (next) {
   this.initials = this.initials.substr(0, 3).toUpperCase();
   next();
